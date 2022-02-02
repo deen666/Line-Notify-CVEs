@@ -29,7 +29,7 @@ function CVE() {
          + "\n" + " -----"
          + "\n" + "" + formattedDate + ""
          + "\n" + " "
-         + "\n" + "" + total[i+2] + ""
+         + "\n" + "" + total[i+1] + ""
          + "\n" + " "
          + "\n" + "CVSS: " + total[i+6] + " "
          + "\n" + " "
