@@ -9,7 +9,7 @@ function CVE() {
   var json = JSON.parse(fetchAPI.getContentText());
 
   for (var i = 1; i < 30; i++) {
-    if (json[i].cvss >= 6) {     
+    if (json[i].cvss >= 6) {     // You can edit at a number 6 or add a variable of CVSS score.
         total[i+1] = json[i].id;
         total[i+2] = json[i].summary;
         total[i+6] = json[i].cvss;
@@ -46,7 +46,7 @@ function CVE() {
      "payload" : formData,
      "headers" : {"Authorization" : "Bearer "+ token}
    };
-  if (total[i+6] >= 6) { 
+  if (total[i+6] >= 6) {   // You can edit at a number 6 or add a variable of CVSS score.
     UrlFetchApp.fetch("https://notify-api.line.me/api/notify",options);
   }
   }
