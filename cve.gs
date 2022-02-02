@@ -1,9 +1,10 @@
 function CVE() {
   
-  var token = "abcdefg123456"; // Your Token 
+  var token = "abcdefg123456"; // Your Line Noti Token. 
   
   var total =[];
-
+  var timeZone = "GMT+7"   // Prepare for Convert UTC to GMT.
+  var format = "dd-MM-YYYY hh:mm:ss"
   var fetchAPI = UrlFetchApp.fetch("https://cve.circl.lu/api/last");
   var json = JSON.parse(fetchAPI.getContentText());
 
@@ -19,8 +20,6 @@ function CVE() {
   
 
   // Convert UTC to GMT
-  var timeZone = "GMT+7"  
-  var format = "dd-MM-YYYY hh:mm:ss"
   var moment = new Date(total[i+4]);
   var formattedDate = Utilities.formatDate(moment, timeZone, format)
   var formData =
